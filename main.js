@@ -67,8 +67,8 @@
   /* Contadores */
   const co = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
-    const el = e.target, to = +el.dataset.count, suf = el.dataset.suffix || ''; let t0;
-    const step = t => { t0 ??= t; const p = Math.min((t - t0) / 1400, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(step); };
+    const el = e.target, to = +el.dataset.count, suf = el.dataset.suffix || '', pre = el.dataset.prefix || ''; let t0;
+    const step = t => { t0 ??= t; const p = Math.min((t - t0) / 1400, 1); el.textContent = pre + Math.round(to * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(step); };
     requestAnimationFrame(step); co.unobserve(el);
   }), { threshold: .6 });
   $$('[data-count]').forEach(el => co.observe(el));
