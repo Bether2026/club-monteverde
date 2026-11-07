@@ -588,3 +588,12 @@ main{overflow-x:clip}
 .contact-cards{grid-template-columns:repeat(4,1fr)}
 @media (max-width:1024px){.contact-cards{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.contact-cards{grid-template-columns:1fr}}
+
+/* Pilares del club (franja sin números) */
+.stat.word{display:flex;flex-direction:column;align-items:center;gap:10px}
+.stat.word .ico{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:var(--green-hi);background:radial-gradient(circle,#19c46322,transparent 70%);border:1px solid #19c46340;transition:transform .5s cubic-bezier(.2,.8,.2,1),background .4s}
+.stat.word .ico svg{width:28px;height:28px}
+.stat.word:hover .ico{transform:translateY(-4px) scale(1.06);background:radial-gradient(circle,#19c46344,transparent 70%)}
+.stat.word b{font-size:clamp(2.1rem,3.6vw,3.2rem);text-transform:uppercase;letter-spacing:.02em;line-height:1.15;padding-top:.08em}
+.stat.word span:last-child{letter-spacing:.18em}
+@media (max-width:560px){.stat.word{padding:34px 12px}.stat.word b{font-size:1.9rem}.stat.word .ico{width:48px;height:48px}.stat.word .ico svg{width:24px;height:24px}}
