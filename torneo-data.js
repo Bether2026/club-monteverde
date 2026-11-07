@@ -8,14 +8,14 @@ window.TORNEO = {
   actualizado: '7ª fecha',
   fuente: 'https://copafacil.com/-9e0jv',
 
-  /* Equipos: sigla y color del escudito */
+  /* Equipos: escudo oficial de cada uno (img/equipos/) */
   equipos: {
-    'Santa Inés':            { sigla: 'SI', color: '#d4b83a' },
-    'Resistencia':           { sigla: 'RC', color: '#e5e5e5' },
-    'Los Tronquitos':        { sigla: 'LT', color: '#9aa39c' },
-    'Los Puntuales':         { sigla: 'LP', color: '#f5f5f2' },
-    'Los Mismos de Siempre': { sigla: 'MS', color: '#3fb6a8' },
-    'Monteverde':            { sigla: 'CAM', escudo: true }
+    'Santa Inés':            { escudo: 'img/equipos/santa-ines.png' },
+    'Resistencia':           { escudo: 'img/equipos/resistencia.png' },
+    'Los Tronquitos':        { escudo: 'img/equipos/los-tronquitos.png' },
+    'Los Puntuales':         { escudo: 'img/equipos/los-puntuales.png' },
+    'Los Mismos de Siempre': { escudo: 'img/equipos/los-mismos-de-siempre.png' },
+    'Monteverde':            { escudo: 'img/escudo.png', local: true }
   },
 
   /* Tabla de posiciones: [equipo, PTS, J, G, E, P, GF, GC] */

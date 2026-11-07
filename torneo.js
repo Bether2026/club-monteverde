@@ -4,10 +4,10 @@
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const badge = name => {
-    const e = T.equipos[name] || { sigla: name.slice(0, 2).toUpperCase(), color: '#888' };
+    const e = T.equipos[name] || {};
     return e.escudo
-      ? `<span class="tb tb-cam"><img src="img/escudo.png" alt=""></span>`
-      : `<span class="tb" style="--tc:${e.color}">${esc(e.sigla)}</span>`;
+      ? `<span class="tb${e.local ? ' tb-cam' : ''}"><img src="${esc(e.escudo)}" alt="Escudo de ${esc(name)}" loading="lazy"></span>`
+      : `<span class="tb tb-txt">${esc(name.slice(0, 2).toUpperCase())}</span>`;
   };
   const isHome = n => n === 'Monteverde';
 
