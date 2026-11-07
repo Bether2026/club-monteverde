@@ -15,7 +15,7 @@ window.TORNEO = {
     'Los Tronquitos':        { escudo: 'img/equipos/los-tronquitos.png' },
     'Los Puntuales':         { escudo: 'img/equipos/los-puntuales.png' },
     'Los Mismos de Siempre': { escudo: 'img/equipos/los-mismos-de-siempre.png' },
-    'Monteverde':            { escudo: 'img/escudo.png', local: true }
+    'Monteverde':            { escudo: 'img/escudo-sm.png', local: true }
   },
 
   /* Tabla de posiciones: [equipo, PTS, J, G, E, P, GF, GC] */

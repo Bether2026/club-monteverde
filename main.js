@@ -40,7 +40,7 @@
   const gal = $('#gallery');
   if (gal && window.GALLERY) {
     gal.innerHTML = window.GALLERY.map(([src, cat], i) =>
-      `<figure class="reveal" data-cat="${cat}"><img src="${src}" alt="Club Atlético Monteverde — foto ${i + 1}" loading="lazy"></figure>`).join('');
+      `<figure class="reveal" data-cat="${cat}"><img src="${src}" alt="${cat === 'senior' ? 'Torneo Senior +35 en la cancha de Monteverde' : 'Fútbol 11 del Club Atlético Monteverde'} — foto ${i + 1}" loading="lazy"></figure>`).join('');
     $$('img', gal).forEach(img => img.addEventListener('error', () => img.closest('figure').remove()));
     $$('.filters button').forEach(b => b.addEventListener('click', () => {
       $$('.filters button').forEach(x => x.classList.toggle('on', x === b));
