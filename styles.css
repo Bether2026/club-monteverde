@@ -584,3 +584,7 @@ main{overflow-x:clip}
 .sanc-note{font-size:.78rem;margin-top:14px}
 @media (max-width:1024px){.sanctions{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.sanctions{grid-template-columns:1fr}}
+.ccard .ic.fb{background:#1877f2}
+.contact-cards{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1024px){.contact-cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.contact-cards{grid-template-columns:1fr}}
