@@ -443,3 +443,41 @@ body:not(.ready) .page-hero h1 span{animation-play-state:paused}
 
 @media (prefers-reduced-motion:reduce){.page-hero h1 span{transform:none}.page-hero .bg{transform:none}}
 main{overflow-x:clip}
+
+/* ===== Publicación: visita del Papa ===== */
+.news{--gold:#f2c94c;overflow:hidden;background:radial-gradient(ellipse at 15% 40%,#f2c94c14,transparent 55%),radial-gradient(ellipse at 90% 80%,#19c46314,transparent 55%)}
+.news-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:center}
+.news-photo{position:relative;margin:0}
+.news-photo .frame{border-radius:22px;overflow:hidden;transform:rotate(-2.5deg);box-shadow:0 40px 90px -30px #000,0 0 0 6px #ffffff12,0 0 0 7px #f2c94c55;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.news-photo:hover .frame{transform:rotate(0) scale(1.02)}
+.news-photo img{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:52% 30%}
+.news-stamp{position:absolute;right:-14px;bottom:44px;display:flex;align-items:center;gap:10px;padding:10px 18px 10px 10px;border-radius:999px;background:#fff;color:#0a0a0a;font-weight:800;font-size:.85rem;box-shadow:0 18px 40px -10px #000;transform:rotate(3deg)}
+.news-stamp img{width:38px;height:auto}
+.news-photo figcaption{margin-top:18px;font-size:.7rem;color:#777;text-align:center}
+.news-photo figcaption a{text-decoration:underline}
+.news-tag{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;border:1px solid #f2c94c66;background:#f2c94c14;color:var(--gold);font-weight:800;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.news-tag i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 #f2c94c88;animation:ping 1.6s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px #f2c94c00}100%{box-shadow:0 0 0 0 #f2c94c00}}
+.news .sec-title em{color:var(--gold)}
+.news-body>p{color:#d4d4d0;font-size:1.05rem;margin-bottom:16px;max-width:580px}
+.countdown{display:flex;gap:12px;margin:28px 0 8px}
+.countdown div{flex:1;max-width:110px;text-align:center;padding:16px 8px;border-radius:16px;background:linear-gradient(180deg,#1a1a1a,#0e0e0e);border:1px solid var(--line);position:relative;overflow:hidden}
+.countdown div::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#00000080}
+.countdown b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.4vw,3rem);line-height:1;font-variant-numeric:tabular-nums}
+.countdown span{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.cd-msg{font-family:var(--display);font-size:clamp(1.4rem,3vw,2rem);text-transform:uppercase;line-height:1.1;color:var(--gold);margin:24px 0 8px;max-width:560px}
+.news-info{list-style:none;display:grid;gap:4px;margin-top:22px}
+.news-info li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.92rem;color:#cfcfcb}
+.news-info li:last-child{border-bottom:0}
+.news-info svg{flex:0 0 22px;width:22px;height:22px;color:var(--gold);margin-top:2px}
+.news-info b{display:block;color:#fff;font-size:.95rem;margin-bottom:2px}
+@media (max-width:860px){
+  .news-grid{grid-template-columns:1fr}
+  .news-photo{max-width:440px;margin:0 auto;width:calc(100% - 24px)}
+}
+@media (max-width:560px){
+  .countdown{gap:8px}
+  .countdown div{padding:12px 4px}
+  .news-stamp{right:-6px;font-size:.78rem}
+}
+.countdown[hidden],.cd-msg[hidden]{display:none}
