@@ -214,20 +214,13 @@
   }
 
   /* ---------- Transición entre páginas ---------- */
-  if (!reduce) {
-    const cur = document.createElement('div'); cur.className = 'curtain';
-    cur.innerHTML = '<img src="img/escudo-3d.png" alt="">';
-    document.body.appendChild(cur);
+  /* Los navegadores modernos lo hacen solos con CSS (@view-transition en fx.css).
+     Para los que no, imitamos el mismo fundido a mano. */
+  const nativeVT = 'CSSViewTransitionRule' in window;
+  if (!reduce && !nativeVT) {
     const root = document.documentElement;
-    if (root.classList.contains('nav-in')) {
-      cur.classList.add('cover'); cur.style.transition = 'none';
-      root.classList.remove('nav-in');
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        cur.style.transition = ''; cur.classList.add('out');
-        setTimeout(() => { cur.classList.remove('cover', 'out'); }, 650);
-      }));
-    }
-    try { sessionStorage.removeItem('cam-nav'); } catch (e) {}
+    root.classList.add('vt-fallback', 'entering');
+    setTimeout(() => root.classList.remove('entering'), 700);
     document.addEventListener('click', e => {
       const a = e.target.closest('a'); if (!a) return;
       const href = a.getAttribute('href') || '';
@@ -237,10 +230,10 @@
       const here = (location.pathname.split('/').pop() || 'index.html');
       if (file === here) return;
       e.preventDefault();
-      try { sessionStorage.setItem('cam-nav', '1'); } catch (err) {}
-      cur.classList.remove('out'); cur.classList.add('cover');
-      setTimeout(() => { location.href = href; }, 560);
+      root.classList.add('leaving');
+      setTimeout(() => { location.href = href; }, 260);
     });
-    addEventListener('pageshow', e => { if (e.persisted) cur.classList.remove('cover', 'out'); });
+    addEventListener('pageshow', e => { if (e.persisted) root.classList.remove('leaving'); });
   }
 })();
+

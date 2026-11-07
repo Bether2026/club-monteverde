@@ -71,15 +71,21 @@ body.ready .pitch3d .ln{animation:draw 2.6s cubic-bezier(.6,.1,.2,1) forwards;an
 .cur-ring.view span{opacity:1}
 .cur-ring.hide,.cur-dot.hide{opacity:0}
 
-/* ---------- Transición entre páginas ---------- */
-.curtain{position:fixed;inset:0;z-index:250;pointer-events:none;display:grid;place-items:center;
-  background:linear-gradient(135deg,#0d7a3e,#06401f);transform:translateY(101%);transition:transform .55s cubic-bezier(.75,0,.2,1)}
-.curtain img{width:110px;opacity:0;transform:scale(.8);transition:opacity .3s .15s,transform .5s .15s}
-.curtain.cover{transform:none;pointer-events:all}
-.curtain.cover img{opacity:1;transform:none}
-.curtain.out{transform:translateY(-101%)}
-html.nav-in body::after{content:"";position:fixed;inset:0;z-index:249;background:linear-gradient(135deg,#0d7a3e,#06401f)}
-html.nav-in #loader{display:none}
+/* ---------- Transición entre páginas ----------
+   Fundido suave nativo del navegador (View Transitions): el contenido sale
+   levemente hacia arriba y desenfocado, y el nuevo entra desde abajo.
+   El menú queda quieto arriba. */
+@view-transition{navigation:auto}
+#top{view-transition-name:site-header}
+::view-transition-group(site-header){animation-duration:.4s}
+::view-transition-old(root){animation:vt-out .26s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:vt-in .6s cubic-bezier(.2,.8,.2,1) .06s both}
+@keyframes vt-out{to{opacity:0;transform:translate3d(0,-16px,0);filter:blur(6px)}}
+@keyframes vt-in{from{opacity:0;transform:translate3d(0,26px,0)}}
+/* Respaldo para navegadores sin transiciones nativas: mismo efecto, a mano */
+html.vt-fallback main,html.vt-fallback footer{transition:opacity .26s ease,transform .26s ease,filter .26s ease}
+html.vt-fallback.leaving main,html.vt-fallback.leaving footer{opacity:0;transform:translate3d(0,-14px,0);filter:blur(5px)}
+html.vt-fallback.entering main{animation:vt-in .6s cubic-bezier(.2,.8,.2,1) both}
 
 /* ---------- Ajustes ---------- */
 @media (max-width:860px){
@@ -92,5 +98,5 @@ html.nav-in #loader{display:none}
 @media (prefers-reduced-motion:reduce){
   .split .ch{opacity:1;transform:none;transition:none}
   .pitch3d .ln{stroke-dashoffset:0}
-  .curtain,html.nav-in body::after{display:none}
+  ::view-transition-old(root),::view-transition-new(root),::view-transition-group(site-header){animation:none}
 }
