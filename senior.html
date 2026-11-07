@@ -72,21 +72,23 @@
       </div>
     </div>
 
-    <div class="sub-h reveal"><h3>Los <em>equipos</em></h3><span class="muted">6 equipos · Torneo Clausura</span></div>
-    <div class="teams">
-      <div class="team home reveal"><div class="ini"><img src="img/escudo.png" alt=""></div><b>Monteverde</b><span>Local</span></div>
-      <div class="team champ reveal d1"><div class="ini">🏆</div><b>Los Mismos de Siempre</b><span>Último campeón</span></div>
-      <div class="team reveal d1"><div class="ini">SI</div><b>Santa Inés</b><span>Senior +35</span></div>
-      <div class="team reveal d2"><div class="ini">LT</div><b>Los Tronquitos</b><span>Claypole</span></div>
-      <div class="team reveal d2"><div class="ini">LP</div><b>Los Puntales</b><span>Senior +35</span></div>
-      <div class="team reveal d3"><div class="ini">RC</div><b>Resistencia</b><span>Senior +35</span></div>
-    </div>
+    <!-- ===== DATOS DEL TORNEO: se dibujan desde torneo-data.js ===== -->
+    <div class="sub-h reveal"><h3>Tabla de <em>posiciones</em></h3><span class="muted"><span id="st-updated">Actualizado</span> · <a class="src" href="https://copafacil.com/-9e0jv" target="_blank" rel="noopener">ver en Copa Fácil ↗</a></span></div>
+    <div class="standings" id="standings"></div>
 
-    <div class="sub-h reveal"><h3>Resultados <em>destacados</em></h3></div>
-    <div class="results">
-      <div class="board reveal"><span class="t w">Monteverde</span><span class="sc">3-2</span><span class="t">Los Tronquitos</span><small>Partido trabado · Victoria verde</small></div>
-      <div class="board reveal d1"><span class="t">Monteverde</span><span class="sc">1-1</span><span class="t">Los Tronquitos</span><small>Empate</small></div>
-      <div class="board reveal d2"><span class="t w">Los Mismos de Siempre</span><span class="sc">5-1</span><span class="t">Los Puntales</span><small>Goleada</small></div>
+    <div class="sub-h reveal"><h3 id="next-title">Próxima <em>fecha</em></h3><span class="muted" id="next-info"></span></div>
+    <div class="fixture-next" id="next-fixture"></div>
+
+    <div class="tor-grid">
+      <div>
+        <div class="sub-h reveal"><h3>Resultados <em>por fecha</em></h3></div>
+        <div class="fecha-tabs reveal" id="fecha-tabs" role="tablist" aria-label="Elegí la fecha"></div>
+        <div class="results-list" id="fecha-list" aria-live="polite"></div>
+      </div>
+      <div>
+        <div class="sub-h reveal"><h3>Tabla de <em>goleadores</em></h3></div>
+        <ol class="scorers" id="scorers"></ol>
+      </div>
     </div>
 
     <div class="sub-h reveal"><h3>Jugador del <em>partido</em></h3>
@@ -123,8 +125,10 @@
 </footer>
 
 <script>
-window.MVPS=[['s13','Jorge Cabrera','Monteverde'],['s21','Juan Tevez','Monteverde · 3ª fecha'],['s03','Ramón','Resistencia · 7ª fecha'],['s04','Gabriel Palacios','Los Tronquitos · 7ª fecha'],['s08','Machuca','Arquero · Los Tronquitos'],['s09','Germán Tevez','Arquero · Santa Inés'],['s14','Andrés Escofano','Los Mismos de Siempre'],['s18','Nicolás Romero','Los Mismos de Siempre'],['s20','Matías Frediksson','Santa Inés · 3ª fecha'],['s22','Leo Echagüe','Los Puntales · 3ª fecha'],['s26','Emiliano Cambiazo','Santa Inés · 1ª fecha']];
+window.MVPS=[['s13','Jorge Cabrera','Monteverde'],['s21','Juan Tevez','Monteverde · 3ª fecha'],['s03','Ramón','Resistencia · 7ª fecha'],['s04','Gabriel Palacios','Los Tronquitos · 7ª fecha'],['s08','Machuca','Arquero · Los Tronquitos'],['s09','Germán Tevez','Arquero · Santa Inés'],['s14','Andrés Escofano','Los Mismos de Siempre'],['s18','Nicolás Romero','Los Mismos de Siempre'],['s20','Matías Frediksson','Santa Inés · 3ª fecha'],['s22','Leo Echagüe','Los Puntuales · 3ª fecha'],['s26','Emiliano Cambiazo','Santa Inés · 1ª fecha']];
 </script>
+<script src="torneo-data.js"></script>
+<script src="torneo.js"></script>
 <script src="main.js"></script>
 <script src="fx.js"></script>
 </body>
