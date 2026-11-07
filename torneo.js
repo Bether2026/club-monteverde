@@ -79,7 +79,26 @@
     }).join('');
   }
 
+  /* ---------- Sanciones ---------- */
+  const sn = $('#sanctions');
+  if (sn) {
+    const list = T.sanciones || [];
+    const cnt = $('#sanc-count'); if (cnt) cnt.textContent = `${list.length} jugador${list.length === 1 ? '' : 'es'} suspendido${list.length === 1 ? '' : 's'}`;
+    const cards = (n, cls, label) => n > 0
+      ? `<span class="cards ${cls}" title="${n} ${label}${n === 1 ? '' : 's'}"><i></i><b>${n}</b></span>` : '';
+    sn.innerHTML = list.length ? list.map(([n, t, f, a, r], i) => `
+      <article class="sanc${isHome(t) ? ' me' : ''} reveal" style="transition-delay:${(i % 4) * 60}ms">
+        <span class="sanc-badge">Suspendido</span>
+        <div class="sanc-top">${badge(t)}<div><b>${esc(n)}</b><small>${esc(t)}</small></div></div>
+        <div class="sanc-foot">
+          <span class="sanc-date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>${esc(f)}</span>
+          <span class="sanc-cards">${cards(a, 'y', 'amarilla')}${cards(r, 'r', 'roja')}</span>
+        </div>
+      </article>`).join('')
+      : '<p class="muted">No hay jugadores suspendidos.</p>';
+  }
+
   /* Que los nuevos elementos también aparezcan con la animación */
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
-  document.querySelectorAll('#standings .reveal, #next-fixture .reveal, #scorers .reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('#standings .reveal, #next-fixture .reveal, #scorers .reveal, #sanctions .reveal').forEach(el => io.observe(el));
 })();

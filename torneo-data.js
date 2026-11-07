@@ -43,6 +43,17 @@ window.TORNEO = {
   proximaFecha: 8,
   proximaInfo: 'Domingo · Cancha Club Monteverde · horarios a confirmar',
 
+  /* Sanciones (suspendidos): [jugador, equipo, fecha de la sanción, amarillas, rojas] */
+  sanciones: [
+    ['Victor Alberto Merlo',  'Los Puntuales',         '26/10/2026', 3, 0],
+    ['David Valdez',          'Resistencia',           '23/09/2026', 3, 0],
+    ['Leonel Echagüe',        'Los Puntuales',         '14/09/2026', 3, 1],
+    ['Daniel Martinez',       'Santa Inés',            '14/09/2026', 3, 0],
+    ['Enrique Ramski',        'Santa Inés',            '06/09/2026', 5, 0],
+    ['Matías Fabian Lencina', 'Los Mismos de Siempre', '06/09/2026', 3, 0],
+    ['Juan Escofano',         'Los Mismos de Siempre', '06/09/2026', 3, 1]
+  ],
+
   /* Goleadores: [jugador, equipo, goles] */
   goleadores: [
     ['Adrian Luna',       'Santa Inés',            7],
