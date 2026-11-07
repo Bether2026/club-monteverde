@@ -1,0 +1,96 @@
+/* =========================================================
+   Club Atlético Monteverde — capa de efectos 3D
+   ========================================================= */
+
+/* ---------- Escudo 3D (extruido) ---------- */
+.c3d{position:relative;width:100%;aspect-ratio:900/873;perspective:1100px}
+.c3d-stage{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.c3d-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:visible;pointer-events:none;user-select:none}
+.c3d-glare{position:absolute;inset:0;pointer-events:none;transform:translateZ(1px);
+  -webkit-mask:url(img/escudo-3d.png) center/contain no-repeat;mask:url(img/escudo-3d.png) center/contain no-repeat;
+  background:radial-gradient(circle at var(--gx,30%) var(--gy,20%),#ffffffb0 0%,#ffffff22 22%,transparent 48%);mix-blend-mode:soft-light}
+.c3d-shadow{position:absolute;left:12%;right:12%;bottom:-9%;height:9%;border-radius:50%;background:radial-gradient(ellipse,#000c,transparent 70%);filter:blur(6px);transform:translateZ(-60px)}
+
+.crest-wrap .c3d{animation:float 6s ease-in-out infinite}
+.crest-wrap .c3d img,#loader .c3d img,.page-hero .c3d img{position:absolute;width:100%;height:100%;filter:none;animation:none}
+.crest-wrap>img{display:none}
+.page-hero .c3d.crest-mini{position:absolute;right:0;bottom:0;width:clamp(110px,15vw,200px);filter:none;animation:float 6s ease-in-out infinite}
+#loader .c3d{width:130px}
+#loader .c3d-stage{animation:coin 1.8s cubic-bezier(.6,.05,.3,.95) infinite}
+@keyframes coin{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+
+/* ---------- Cancha en perspectiva ---------- */
+.pitch3d{position:absolute;left:50%;bottom:-6%;width:150%;max-width:2200px;aspect-ratio:105/68;z-index:-1;pointer-events:none;
+  transform:translateX(-50%) perspective(1000px) rotateX(70deg);transform-origin:50% 100%;opacity:.55;
+  -webkit-mask-image:linear-gradient(0deg,#000 15%,transparent 78%);mask-image:linear-gradient(0deg,#000 15%,transparent 78%)}
+.pitch3d svg{width:100%;height:100%;overflow:visible}
+.pitch3d .ln{fill:none;stroke:#19c463;stroke-width:.35;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);filter:drop-shadow(0 0 1.2px #19c463)}
+body.ready .pitch3d .ln{animation:draw 2.6s cubic-bezier(.6,.1,.2,1) forwards;animation-delay:calc(1s + var(--d,0s))}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- Partículas ---------- */
+.fx-dust{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+
+/* ---------- Títulos letra por letra ---------- */
+.split{perspective:900px}
+.split.reveal{opacity:1;transform:none}
+.split .w{display:inline-block;white-space:nowrap}
+.split .ch{display:inline-block;opacity:0;transform-origin:50% 100% -20px;transform:translate3d(0,.35em,0) rotateX(-95deg);
+  transition:transform 1s cubic-bezier(.2,.85,.25,1),opacity .5s ease;transition-delay:calc(var(--i)*24ms)}
+.split.in .ch{opacity:1;transform:none}
+
+/* ---------- Aparición 3D genérica ---------- */
+.reveal:not(.split){transform:perspective(1200px) translate3d(0,60px,0) rotateX(12deg);transform-origin:50% 0}
+.reveal.in:not(.split){transform:none}
+.gallery figure.reveal{transform:perspective(900px) translate3d(0,80px,-60px) rotateX(28deg)}
+.gallery figure.reveal.in{transform:none}
+
+/* ---------- Profundidad en tarjetas ---------- */
+.card,.tile{transition:transform .25s ease-out}
+.card img,.tile img{transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .6s}
+.card:hover img,.tile:hover img{transform:scale(1.14) translate3d(calc(var(--px,0)*-18px),calc(var(--py,0)*-18px),0)}
+.fx-shine{position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .4s;
+  background:radial-gradient(circle at var(--sx,50%) var(--sy,50%),#ffffff38,transparent 42%)}
+.card:hover .fx-shine,.tile:hover .fx-shine{opacity:1}
+.card .info,.tile h3,.tile p{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .info,.tile:hover h3{transform:translate3d(calc(var(--px,0)*8px),calc(var(--py,0)*8px),0)}
+
+/* ---------- Coverflow Jugador del partido ---------- */
+.mvp.fx-flow{perspective:1100px;padding-inline:calc(50% - clamp(105px,11vw,130px));scroll-padding-inline:0}
+.mvp.fx-flow article{scroll-snap-align:center;will-change:transform;transition:transform .2s ease-out,filter .2s ease-out}
+
+/* ---------- Cursor ---------- */
+.has-cursor,.has-cursor a,.has-cursor button,.has-cursor figure{cursor:none}
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;z-index:300;pointer-events:none;border-radius:50%;transform:translate3d(-100px,-100px,0)}
+.cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--green-hi)}
+.cur-ring{width:40px;height:40px;margin:-20px 0 0 -20px;border:1.5px solid #ffffffb0;display:grid;place-items:center;
+  transition:width .3s,height .3s,margin .3s,background .3s,border-color .3s,opacity .3s}
+.cur-ring span{font:800 .62rem var(--body);letter-spacing:.18em;color:#0a0a0a;opacity:0;transition:opacity .2s}
+.cur-ring.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:#19c4631f;border-color:var(--green-hi)}
+.cur-ring.view{width:84px;height:84px;margin:-42px 0 0 -42px;background:#fff;border-color:#fff}
+.cur-ring.view span{opacity:1}
+.cur-ring.hide,.cur-dot.hide{opacity:0}
+
+/* ---------- Transición entre páginas ---------- */
+.curtain{position:fixed;inset:0;z-index:250;pointer-events:none;display:grid;place-items:center;
+  background:linear-gradient(135deg,#0d7a3e,#06401f);transform:translateY(101%);transition:transform .55s cubic-bezier(.75,0,.2,1)}
+.curtain img{width:110px;opacity:0;transform:scale(.8);transition:opacity .3s .15s,transform .5s .15s}
+.curtain.cover{transform:none;pointer-events:all}
+.curtain.cover img{opacity:1;transform:none}
+.curtain.out{transform:translateY(-101%)}
+html.nav-in body::after{content:"";position:fixed;inset:0;z-index:249;background:linear-gradient(135deg,#0d7a3e,#06401f)}
+html.nav-in #loader{display:none}
+
+/* ---------- Ajustes ---------- */
+@media (max-width:860px){
+  .page-hero .c3d.crest-mini{position:relative;width:100px;margin-bottom:18px}
+  .crest-wrap .c3d{width:100%}
+}
+@media (hover:none),(pointer:coarse){
+  .pitch3d{opacity:.4}
+}
+@media (prefers-reduced-motion:reduce){
+  .split .ch{opacity:1;transform:none;transition:none}
+  .pitch3d .ln{stroke-dashoffset:0}
+  .curtain,html.nav-in body::after{display:none}
+}
