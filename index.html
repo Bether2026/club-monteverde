@@ -84,58 +84,6 @@
 </div></div>
 
 <!-- STATS -->
-<!-- ===== PUBLICACIÓN: VISITA DEL PAPA LEÓN XIV (se puede borrar esta sección completa cuando pase) ===== -->
-<section class="pad news" id="papa">
-  <div class="wrap">
-    <div class="news-grid">
-      <figure class="news-photo reveal">
-        <div class="frame"><img src="img/papa-leon-xiv.jpg" alt="El Papa León XIV sonriendo" loading="lazy"></div>
-        <span class="news-stamp"><img src="img/escudo-3d.png" alt="">Don Orione te espera</span>
-        <figcaption>Foto: Edgar Beltrán / The Pillar · <a href="https://commons.wikimedia.org/wiki/File:Pope_Leo_XIV_2.png" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
-      </figure>
-      <div class="news-body">
-        <span class="news-tag reveal"><i></i><span data-state-text>Novedad · Lunes 9 de noviembre</span></span>
-        <h2 class="sec-title reveal d1">¡Bienvenido, <em>León</em>, a Don Orione!</h2>
-        <p class="reveal d2">Este lunes el Papa León XIV llega al <strong>Pequeño Cottolengo Don Orione de Claypole</strong>, la casa que todos los días cuida con amor a más de 400 personas con discapacidad. Es un día histórico para nuestro barrio.</p>
-        <p class="reveal d2">Desde el Club Atlético Monteverde nos sumamos a la alegría de toda la comunidad. Que esta visita nos encuentre como en la cancha: <strong>todos juntos, como una familia.</strong> 💚🖤🤍</p>
-        <div class="countdown reveal d3" id="cd" aria-live="polite">
-          <div><b data-u="d">0</b><span>días</span></div>
-          <div><b data-u="h">00</b><span>horas</span></div>
-          <div><b data-u="m">00</b><span>min</span></div>
-          <div><b data-u="s">00</b><span>seg</span></div>
-        </div>
-        <p class="cd-msg" id="cdMsg" hidden></p>
-        <ul class="news-info reveal d3">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Llegada al Cottolengo</b>Lunes 9 de noviembre · 9:15 h</div></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><div><b>Posta del Encuentro</b>Parque Don Orione, con pantallas gigantes · entrada libre</div></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><div><b>Tené en cuenta</b>Habrá cortes de tránsito en la zona. El ingreso al Cottolengo no es masivo: la Obra invita a acompañar con la oración y por sus redes.</div></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <script>
-  (function(){
-    var T=new Date('2026-11-09T09:15:00-03:00').getTime(), END=new Date('2026-11-10T00:00:00-03:00').getTime();
-    var cd=document.getElementById('cd'), msg=document.getElementById('cdMsg'), tag=document.querySelector('#papa [data-state-text]');
-    var u={}; cd.querySelectorAll('[data-u]').forEach(function(b){u[b.dataset.u]=b;});
-    function pad(n){return (n<10?'0':'')+n;}
-    function tick(){
-      var now=Date.now(), d=T-now;
-      if(d>0){
-        var s=Math.floor(d/1000);
-        u.d.textContent=Math.floor(s/86400); u.h.textContent=pad(Math.floor(s%86400/3600));
-        u.m.textContent=pad(Math.floor(s%3600/60)); u.s.textContent=pad(s%60);
-        return;
-      }
-      cd.hidden=true; msg.hidden=false; clearInterval(iv);
-      if(now<END){ tag.textContent='¡Hoy es el día!'; msg.textContent='¡El Papa ya está en Don Orione! Acompañemos desde la Posta del Encuentro en Parque Don Orione.'; }
-      else { tag.textContent='Gracias, León'; msg.textContent='Gracias por visitar nuestro barrio. Don Orione no lo va a olvidar nunca.'; }
-    }
-    var iv=setInterval(tick,1000); tick();
-  })();
-  </script>
-</section>
-<!-- ===== FIN PUBLICACIÓN ===== -->
 
 <section class="stats">
   <div class="wrap stats-grid">
