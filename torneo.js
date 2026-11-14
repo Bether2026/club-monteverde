@@ -35,10 +35,10 @@
   if (nx && T.fechas[T.proximaFecha]) {
     $('#next-title') && ($('#next-title').innerHTML = `${T.proximaFecha}ª <em>fecha</em>`);
     $('#next-info') && ($('#next-info').textContent = T.proximaInfo || '');
-    nx.innerHTML = T.fechas[T.proximaFecha].map(([a, , , b], i) => `
+    nx.innerHTML = T.fechas[T.proximaFecha].map(([a, , , b, hora], i) => `
       <div class="fx-card${isHome(a) || isHome(b) ? ' me' : ''} reveal" style="transition-delay:${i * 90}ms">
         <div class="fx-t">${badge(a)}<b>${esc(a)}</b></div>
-        <span class="fx-vs">VS</span>
+        <span class="fx-vs">${hora ? `<small class="fx-h">${esc(hora)}</small>` : ''}VS</span>
         <div class="fx-t">${badge(b)}<b>${esc(b)}</b></div>
       </div>`).join('');
   }

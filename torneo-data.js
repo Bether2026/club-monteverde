@@ -38,10 +38,11 @@ window.TORNEO = {
     5: [['Los Puntuales', 0, 0, 'Los Tronquitos'], ['Santa Inés', 3, 3, 'Monteverde'], ['Los Mismos de Siempre', 1, 1, 'Resistencia']],
     6: [['Santa Inés', 4, 0, 'Los Puntuales'], ['Los Tronquitos', 1, 1, 'Resistencia'], ['Los Mismos de Siempre', 2, 2, 'Monteverde']],
     7: [['Los Puntuales', 0, 1, 'Resistencia'], ['Santa Inés', 7, 1, 'Los Mismos de Siempre'], ['Monteverde', 1, 2, 'Los Tronquitos']],
-    8: [['Los Mismos de Siempre', null, null, 'Los Puntuales'], ['Resistencia', null, null, 'Monteverde'], ['Los Tronquitos', null, null, 'Santa Inés']]
+    8: [['Los Tronquitos', null, null, 'Santa Inés', '10 hs'], ['Los Mismos de Siempre', null, null, 'Los Puntuales', '11 hs'], ['Resistencia', null, null, 'Monteverde', '12 hs']]
   },
+  /* Opcional: 5º dato de cada partido = horario (se muestra en la próxima fecha) */
   proximaFecha: 8,
-  proximaInfo: 'Domingo · Cancha Club Monteverde · horarios a confirmar',
+  proximaInfo: 'Domingo 15 de noviembre · Cancha Club Monteverde · Río Dulce 399, Don Orione',
 
   /* Sanciones (suspendidos): [jugador, equipo, fecha de la sanción, amarillas, rojas] */
   sanciones: [
