@@ -599,3 +599,21 @@ main{overflow-x:clip}
 .stat.word b{font-size:clamp(2.1rem,3.6vw,3.2rem);text-transform:uppercase;letter-spacing:.02em;line-height:1.15;padding-top:.08em}
 .stat.word span:last-child{letter-spacing:.18em}
 @media (max-width:560px){.stat.word{padding:34px 12px}.stat.word b{font-size:1.9rem}.stat.word .ico{width:48px;height:48px}.stat.word .ico svg{width:24px;height:24px}}
+
+/* ===== EN VIVO (YouTube del torneo) ===== */
+.live-dot{position:relative;display:inline-block;width:10px;height:10px;border-radius:50%;background:#ff2d2d;flex:none}
+.live-dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid #ff2d2d;animation:livePulse 1.6s ease-out infinite}
+@keyframes livePulse{from{transform:scale(.6);opacity:1}to{transform:scale(1.7);opacity:0}}
+.live-tag{display:inline-flex;align-items:center;gap:9px;padding:6px 12px 6px 11px;border-radius:999px;background:#ff2d2d1f;border:1px solid #ff2d2d66;color:#ff5a5a;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.live-cta{display:flex;align-items:center;gap:22px;margin:22px 0 10px;padding:22px 24px;border-radius:20px;background:linear-gradient(120deg,#2a0b0b,#120707 55%,#0b0b0b);border:1px solid #ff2d2d55;box-shadow:0 0 50px -24px #ff2d2d;color:var(--white);transition:transform .3s,border-color .3s}
+.live-cta:hover{transform:translateY(-4px);border-color:#ff2d2daa}
+.live-cta .yt{flex:none;width:64px;height:64px;border-radius:18px;display:grid;place-items:center;background:#ff0000;color:#fff;box-shadow:0 10px 24px -10px #ff0000}
+.live-cta .yt svg{width:34px;height:34px}
+.live-cta .tx{flex:1;min-width:0}
+.live-cta .tx b{display:block;font-family:var(--display);font-size:1.5rem;letter-spacing:.02em;line-height:1.1;margin-top:8px}
+.live-cta .tx small{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
+.live-cta .go{flex:none;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:#ff2d2d;color:#fff;font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+.btn-live{display:inline-flex;align-items:center;gap:10px;background:#ff2d2d1a;border:1px solid #ff2d2d77;color:#fff}
+.btn-live:hover{background:#ff2d2d33}
+@media (max-width:640px){.live-cta{flex-wrap:wrap;gap:16px}.live-cta .go{width:100%;justify-content:center}}
+@media (prefers-reduced-motion:reduce){.live-dot::after{animation:none}}
