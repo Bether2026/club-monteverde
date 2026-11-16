@@ -483,6 +483,19 @@ main{overflow-x:clip}
   .thanks-title span{-webkit-text-stroke:1.5px var(--white)}
 }
 
+/* Novedad "Todos por Sofía": mismo formato con acento rosa y video vertical */
+.thanks.sofia{background:radial-gradient(ellipse at 85% 10%,#ff3d8b26,transparent 55%),radial-gradient(ellipse at 10% 90%,#19c4631a,transparent 50%)}
+.thanks.sofia::before{background:#ff3d8b;box-shadow:130px 0 0 var(--green-hi)}
+.thanks.sofia .thanks-tag{border-color:#ff3d8b77;background:#ff3d8b1a;color:#ff7ab0}
+.thanks.sofia .thanks-tag i{background:#ff3d8b}
+.thanks.sofia .thanks-title{font-size:clamp(4rem,12vw,9.5rem)}
+.thanks.sofia .thanks-title span{-webkit-text-stroke:2px #ff7ab0}
+.thanks.sofia .thanks-vals li{border-top-color:#ff3d8b}
+.thanks.sofia .thanks-sign{color:#ff7ab0!important}
+.thanks-video .frame{max-width:380px;margin:0 auto;transform:rotate(-2deg)}
+.thanks-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.thanks.sofia .thanks-strip img{aspect-ratio:4/3}
+
 /* ===== Torneo Senior +35: tabla, fechas, goleadores ===== */
 .src{color:var(--green-hi);text-decoration:underline;text-underline-offset:3px}
 .tb{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px}
