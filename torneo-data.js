@@ -5,7 +5,7 @@
    ========================================================= */
 window.TORNEO = {
   nombre: 'Torneo Clausura Senior +35',
-  actualizado: '7ª fecha',
+  actualizado: '8ª fecha',
   fuente: 'https://copafacil.com/-9e0jv',
 
   /* Equipos: escudo oficial de cada uno (img/equipos/) */
@@ -20,12 +20,12 @@ window.TORNEO = {
 
   /* Tabla de posiciones: [equipo, PTS, J, G, E, P, GF, GC] */
   tabla: [
-    ['Santa Inés',            11, 7, 5, 1, 1, 23,  7],
-    ['Resistencia',            7, 6, 2, 3, 1, 11,  7],
-    ['Los Tronquitos',         6, 6, 2, 2, 2,  7, 11],
-    ['Los Puntuales',          6, 7, 2, 2, 3,  5, 13],
-    ['Los Mismos de Siempre',  5, 7, 1, 3, 3, 13, 19],
-    ['Monteverde',             5, 7, 0, 5, 2, 10, 12]
+    ['Santa Inés',            13, 8, 6, 1, 1, 26,  9],
+    ['Resistencia',            9, 7, 3, 3, 1, 17,  8],
+    ['Los Puntuales',          8, 8, 3, 2, 3,  8, 13],
+    ['Los Tronquitos',         6, 7, 2, 2, 3,  9, 14],
+    ['Los Mismos de Siempre',  5, 8, 1, 3, 4, 13, 22],
+    ['Monteverde',             5, 8, 0, 5, 3, 11, 18]
   ],
 
   /* Partidos por fecha: [local, goles local, goles visitante, visitante]
@@ -38,11 +38,13 @@ window.TORNEO = {
     5: [['Los Puntuales', 0, 0, 'Los Tronquitos'], ['Santa Inés', 3, 3, 'Monteverde'], ['Los Mismos de Siempre', 1, 1, 'Resistencia']],
     6: [['Santa Inés', 4, 0, 'Los Puntuales'], ['Los Tronquitos', 1, 1, 'Resistencia'], ['Los Mismos de Siempre', 2, 2, 'Monteverde']],
     7: [['Los Puntuales', 0, 1, 'Resistencia'], ['Santa Inés', 7, 1, 'Los Mismos de Siempre'], ['Monteverde', 1, 2, 'Los Tronquitos']],
-    8: [['Los Tronquitos', null, null, 'Santa Inés', '10 hs'], ['Los Mismos de Siempre', null, null, 'Los Puntuales', '11 hs'], ['Resistencia', null, null, 'Monteverde', '12 hs']]
+    8: [['Los Tronquitos', 2, 3, 'Santa Inés'], ['Los Mismos de Siempre', 0, 3, 'Los Puntuales'], ['Resistencia', 6, 1, 'Monteverde']],
+    9: [['Los Puntuales', null, null, 'Monteverde'], ['Los Mismos de Siempre', null, null, 'Los Tronquitos'], ['Santa Inés', null, null, 'Resistencia']],
+    10: [['Los Tronquitos', null, null, 'Los Puntuales'], ['Monteverde', null, null, 'Santa Inés'], ['Resistencia', null, null, 'Los Mismos de Siempre']]
   },
   /* Opcional: 5º dato de cada partido = horario (se muestra en la próxima fecha) */
-  proximaFecha: 8,
-  proximaInfo: 'Domingo 15 de noviembre · Cancha Club Monteverde · Río Dulce 399, Don Orione',
+  proximaFecha: 9,
+  proximaInfo: 'Día y horarios a confirmar · Cancha Club Monteverde · Río Dulce 399, Don Orione',
 
   /* Sanciones (suspendidos): [jugador, equipo, fecha de la sanción, amarillas, rojas] */
   sanciones: [
@@ -57,15 +59,15 @@ window.TORNEO = {
 
   /* Goleadores: [jugador, equipo, goles] */
   goleadores: [
-    ['Adrian Luna',       'Santa Inés',            7],
+    ['Adrian Luna',       'Santa Inés',            8],
+    ['Jose Arevalo',      'Resistencia',           6],
     ['Julian Auteri',     'Santa Inés',            4],
     ['Matias Fredriksson','Santa Inés',            4],
-    ['Jose Arevalo',      'Resistencia',           3],
     ['Juan Tevez',        'Monteverde',            3],
     ['Juan Escofano',     'Los Mismos de Siempre', 3],
     ['Nicolás Romero',    'Los Mismos de Siempre', 3],
     ['Gabriel Palacio',   'Los Tronquitos',        3],
-    ['David Valdez',      'Resistencia',           2],
-    ['Hugo Pelusa',       'Resistencia',           2]
+    ['Esteban Saya',      'Los Tronquitos',        2],
+    ['David Valdez',      'Resistencia',           2]
   ]
 };
