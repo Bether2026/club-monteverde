@@ -630,3 +630,26 @@ main{overflow-x:clip}
 .btn-live:hover{background:#ff2d2d33}
 @media (max-width:640px){.live-cta{flex-wrap:wrap;gap:16px}.live-cta .go{width:100%;justify-content:center}}
 @media (prefers-reduced-motion:reduce){.live-dot::after{animation:none}}
+
+/* ===== Día de partido (femenino) ===== */
+.matchday{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 0,#19c46322,transparent 55%),radial-gradient(ellipse at 0 100%,#ffffff0d,transparent 55%)}
+.md-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,70px);align-items:center}
+.md-flyer{border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -30px #000,0 0 0 1px #ffffff1f;transform:rotate(-1.5deg)}
+.md-flyer img{display:block;width:100%;height:auto}
+.md-tag{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;border:1px solid #19c46366;background:#19c4631a;color:var(--green-hi);font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+.md-tag i{width:9px;height:9px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 0 0 #ff4d4daa;animation:mdPulse 1.6s infinite}
+@keyframes mdPulse{70%{box-shadow:0 0 0 10px #ff4d4d00}100%{box-shadow:0 0 0 0 #ff4d4d00}}
+.md-title{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:clamp(3.2rem,8vw,6rem);line-height:.9;margin-top:18px}
+.md-title span{color:transparent;-webkit-text-stroke:2px var(--green-hi)}
+.md-vs{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
+.md-t{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.05rem}
+.md-t img{width:46px;height:46px;object-fit:contain}
+.md-ep{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(90deg,#5bb4e8 0 33%,#fff 33% 66%,#5bb4e8 66%);color:#123a5c;font-family:Anton,sans-serif;font-size:1rem;font-weight:400}
+.md-vs em{font-style:normal;font-family:Anton,sans-serif;color:var(--green-hi);font-size:1.4rem}
+.md-info{list-style:none;display:grid;grid-template-columns:auto auto 1fr;margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.md-info li{padding:16px 18px;border-right:1px solid var(--line)}.md-info li:first-child{padding-left:0}.md-info li:last-child{border-right:0}
+.md-info small{display:block;font-size:.66rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--green-hi)}
+.md-info b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:1.6rem;margin-top:4px;line-height:1}
+.md-info span{display:block;font-size:.82rem;color:var(--muted);margin-top:4px}
+.md-lead{color:var(--muted);margin:22px 0 24px;max-width:520px}
+@media (max-width:860px){.md-grid{grid-template-columns:1fr}.md-flyer{max-width:440px;margin:0 auto}.md-info{grid-template-columns:1fr 1fr}.md-info li:nth-child(2){border-right:0}.md-info li:last-child{grid-column:1 / -1;border-top:1px solid var(--line);padding-left:0}}
