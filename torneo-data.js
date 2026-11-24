@@ -5,7 +5,7 @@
    ========================================================= */
 window.TORNEO = {
   nombre: 'Torneo Clausura Senior +35',
-  actualizado: '8ª fecha',
+  actualizado: '9ª fecha · 🏆 Santa Inés campeón de la fase regular',
   fuente: 'https://copafacil.com/-9e0jv',
 
   /* Equipos: escudo oficial de cada uno (img/equipos/) */
@@ -20,12 +20,12 @@ window.TORNEO = {
 
   /* Tabla de posiciones: [equipo, PTS, J, G, E, P, GF, GC] */
   tabla: [
-    ['Santa Inés',            13, 8, 6, 1, 1, 26,  9],
-    ['Resistencia',            9, 7, 3, 3, 1, 17,  8],
-    ['Los Puntuales',          8, 8, 3, 2, 3,  8, 13],
-    ['Los Tronquitos',         6, 7, 2, 2, 3,  9, 14],
-    ['Los Mismos de Siempre',  5, 8, 1, 3, 4, 13, 22],
-    ['Monteverde',             5, 8, 0, 5, 3, 11, 18]
+    ['Santa Inés',            15, 9, 7, 1, 1, 32, 11],
+    ['Resistencia',            9, 8, 3, 3, 2, 19, 14],
+    ['Los Puntuales',          8, 9, 3, 2, 4, 10, 17],
+    ['Los Mismos de Siempre',  7, 9, 2, 3, 4, 17, 24],
+    ['Monteverde',             7, 9, 1, 5, 3, 15, 20],
+    ['Los Tronquitos',         6, 8, 2, 2, 4, 11, 18]
   ],
 
   /* Partidos por fecha: [local, goles local, goles visitante, visitante]
@@ -39,15 +39,18 @@ window.TORNEO = {
     6: [['Santa Inés', 4, 0, 'Los Puntuales'], ['Los Tronquitos', 1, 1, 'Resistencia'], ['Los Mismos de Siempre', 2, 2, 'Monteverde']],
     7: [['Los Puntuales', 0, 1, 'Resistencia'], ['Santa Inés', 7, 1, 'Los Mismos de Siempre'], ['Monteverde', 1, 2, 'Los Tronquitos']],
     8: [['Los Tronquitos', 2, 3, 'Santa Inés'], ['Los Mismos de Siempre', 0, 3, 'Los Puntuales'], ['Resistencia', 6, 1, 'Monteverde']],
-    9: [['Santa Inés', null, null, 'Resistencia', '10 hs'], ['Los Puntuales', null, null, 'Monteverde', '11 hs'], ['Los Tronquitos', null, null, 'Los Mismos de Siempre', '12 hs']],
+    9: [['Santa Inés', 6, 2, 'Resistencia'], ['Los Puntuales', 2, 4, 'Monteverde'], ['Los Mismos de Siempre', 4, 2, 'Los Tronquitos']],
     10: [['Los Tronquitos', null, null, 'Los Puntuales'], ['Monteverde', null, null, 'Santa Inés'], ['Resistencia', null, null, 'Los Mismos de Siempre']]
   },
   /* Opcional: 5º dato de cada partido = horario (se muestra en la próxima fecha) */
-  proximaFecha: 9,
-  proximaInfo: 'Domingo 22 de noviembre · Cancha Club Monteverde · Río Dulce 399, Don Orione',
+  proximaFecha: 10,
+  proximaInfo: 'Última fecha de la fase regular · Cancha Club Monteverde · Río Dulce 399, Don Orione',
 
   /* Sanciones (suspendidos): [jugador, equipo, fecha de la sanción, amarillas, rojas] */
   sanciones: [
+    ['Emiliano Cambiasso',    'Santa Inés',            '23/11/2026', 0, 0],
+    ['Juan Tevez',            'Monteverde',            '23/11/2026', 0, 0],
+    ['Walter Rojas',          'Los Puntuales',         '23/11/2026', 0, 0],
     ['Victor Alberto Merlo',  'Los Puntuales',         '26/10/2026', 3, 0],
     ['David Valdez',          'Resistencia',           '23/09/2026', 3, 0],
     ['Leonel Echagüe',        'Los Puntuales',         '14/09/2026', 3, 1],
@@ -59,15 +62,15 @@ window.TORNEO = {
 
   /* Goleadores: [jugador, equipo, goles] */
   goleadores: [
-    ['Adrian Luna',       'Santa Inés',            8],
-    ['Jose Arevalo',      'Resistencia',           6],
-    ['Julian Auteri',     'Santa Inés',            4],
-    ['Matias Fredriksson','Santa Inés',            4],
-    ['Juan Tevez',        'Monteverde',            3],
-    ['Juan Escofano',     'Los Mismos de Siempre', 3],
-    ['Nicolás Romero',    'Los Mismos de Siempre', 3],
-    ['Gabriel Palacio',   'Los Tronquitos',        3],
-    ['Esteban Saya',      'Los Tronquitos',        2],
-    ['David Valdez',      'Resistencia',           2]
+    ['Adrian Luna',       'Santa Inés',            11],
+    ['Jose Arevalo',      'Resistencia',            6],
+    ['Juan Tevez',        'Monteverde',             5],
+    ['Nicolás Romero',    'Los Mismos de Siempre',  5],
+    ['Julian Auteri',     'Santa Inés',             5],
+    ['Matias Fredriksson','Santa Inés',             5],
+    ['Leonel Echagüe',    'Los Puntuales',          4],
+    ['Gabriel Palacio',   'Los Tronquitos',         4],
+    ['Lucas Negrete',     'Resistencia',            3],
+    ['Juan Escofano',     'Los Mismos de Siempre',  3]
   ]
 };
